@@ -5,6 +5,7 @@ import { useShoopingCartContext } from "../../context/ShoopingCartContext";
 import { getProducts } from "../../Types/types";
 import { checkdark } from "../sideBar/SideBar";
 import { useThemeContext } from "../../context/ThemeContext";
+import { Person, Timer } from "@mui/icons-material";
 type ProductItme = getProducts;
 function ProductItmes({
   title,
@@ -28,8 +29,14 @@ function ProductItmes({
         </div>
         <br />
         <div className="flex px-5 justify-between ">
-          <h1>{Teacher_Course}</h1>
-          <span>{TimeCourse}</span>
+        <div className="flex gap-2">
+              <Person />
+              <h1>{Teacher_Course}</h1>
+            </div>
+            <div className="flex gap-2">
+              <Timer />
+              <span>{TimeCourse}</span>
+            </div>
         </div>
       </Link>
 
