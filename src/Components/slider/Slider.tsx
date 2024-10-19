@@ -25,7 +25,7 @@ function Slider() {
             </div>
             <div className="flex gap-2">
               <Timer />
-              <span>5HR</span>
+              <span>5H</span>
             </div>
           </div>
           <br />
@@ -50,7 +50,7 @@ function Slider() {
             </div>
             <div className="flex gap-2">
               <Timer />
-              <span>5HR</span>
+              <span>5H</span>
             </div>
           </div>
           <br />
@@ -75,7 +75,7 @@ function Slider() {
             </div>
             <div className="flex gap-2">
               <Timer />
-              <span>1HR</span>
+              <span>1H</span>
             </div>
           </div>
           <br />
@@ -105,7 +105,7 @@ function Slider() {
             </div>
             <div className="flex gap-2">
               <Timer />
-              <span>5HR</span>
+              <span>5H</span>
             </div>
           </div>
           <br />
@@ -130,7 +130,7 @@ function Slider() {
             </div>
             <div className="flex gap-2">
               <Timer />
-              <span>5HR</span>
+              <span>5H</span>
             </div>
           </div>
           <br />
@@ -155,7 +155,7 @@ function Slider() {
             </div>
             <div className="flex gap-2">
               <Timer />
-              <span>5HR</span>
+              <span>5H</span>
             </div>
           </div>
           <br />
