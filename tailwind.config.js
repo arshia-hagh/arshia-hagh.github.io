@@ -1,10 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [],
+  content: ["./src/**/*.{html,js,ts,tsx}"],
   theme: {
     extend: {
       backgroundColor:{
-        'primery--color': '#1d1712',
+        'primery--color': '#211f1d',
         'secondery--color': '#c86305'
       }
     },
