@@ -5,8 +5,8 @@ export default {
     extend: {
       backgroundColor:{
         'primery--color': '#211f1d',
-        'secondery--color': '#c86305'
-      }
+        'secondery--color': '#c86305' 
+      },
     },
   },
   plugins: [],
