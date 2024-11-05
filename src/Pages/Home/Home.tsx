@@ -3,9 +3,11 @@ import MovieItem from "../../Components/movieItem/MovieItem";
 import Container from "../../Components/container/Container";
 import { getMovie } from "../../services/axios/requsets/Movie";
 import { reqApi } from "../../services/axios/configs/Configs";
+import { getMovies } from "../../server/types";
+import { Link } from "react-router-dom";
 
 function Home() {
-  const [movies, setMovies] = useState();
+  const [movies, setMovies] = useState<getMovies>();
   const abortController = new AbortController()
   useEffect(() => {
     reqApi({
@@ -18,22 +20,22 @@ function Home() {
       abortController.abort()
     }
   },[setMovies])
-  console.log(movies)
+  
   return (
-    <div>
-      <h1>Movies</h1>
+    <>
       <br />
-
       <Container>
+      <h1 className="font-bold">List Movies</h1>
+      <br />
         <div className="grid grid-cols-3">
-          <MovieItem />
-          <MovieItem />
-          <MovieItem />
-          <MovieItem />
-          <MovieItem />
+          {movies?.results.map(items => (
+            <Link to={`/Movie/${items.id}`}>
+            <MovieItem key={items.id} {...items}/>
+            </Link>
+          ))}
         </div>
       </Container>
-    </div>
+    </>
   );
 }
 
