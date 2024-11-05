@@ -13,7 +13,7 @@ function NavBar() {
             <FaCartShopping className='cursor-pointer transition-transform duration-[0.3s] hover:translate-y-[-3px] ' color='white' fontSize={30}/>
         </div>
         <form action="">
-            <input type="text" className='outline-none anim px-2 py-1 border-2 rounded-2xl border-[#c86305] bg-transparent text-white' value={query} onChange={(e) => setQuery(e.target.value)} placeholder='Search...' name="" id="" />
+            <input type="text" className='outline-none  px-2 py-1 border-2 rounded-2xl border-[#c86305] bg-transparent text-white' value={query} onChange={(e) => setQuery(e.target.value)} placeholder='Search...' name="" id="" />
         </form>
     </header>
   )
