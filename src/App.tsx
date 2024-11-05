@@ -1,6 +1,7 @@
 import Layout from './Components/layout/Layout'
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import Home from './Pages/Home/Home'
+import Movie from './Pages/Movie/Movie'
 
 function App() {
   
@@ -9,6 +10,8 @@ function App() {
     <Layout>
       <Routes>
         <Route path='/' element={<Home/>}/>
+        <Route path='/Movie/:id' element={<Movie/>}/>
+        <Route path='*' element={<Navigate to='/' />}/>
       </Routes>
     </Layout>
   )
