@@ -7,6 +7,12 @@ export default {
         'primery--color': '#211f1d',
         'secondery--color': '#c86305' 
       },
+      screens:{
+        'sm' : '350px',
+        'md' : '750px',
+        'lg': '1024px'
+
+      }
     },
   },
   plugins: [],
