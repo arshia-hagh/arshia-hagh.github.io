@@ -27,11 +27,12 @@ function Home() {
       <Container>
       <h1 className="font-bold">List Movies</h1>
       <br />
-        <div className="grid grid-cols-3">
+        <div className="grid   grid-cols-3">
           {movies?.results.map(items => (
-            <Link to={`/Movie/${items.id}`}>
-            <MovieItem key={items.id} {...items}/>
-            </Link>
+           <Link  key={items.id} to={`/Movie/${items.id}`}>
+            <MovieItem  {...items}/>
+           </Link>
+            
           ))}
         </div>
       </Container>
