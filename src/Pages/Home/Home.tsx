@@ -19,7 +19,7 @@ function Home() {
     return () => {
       abortController.abort()
     }
-  },[setMovies])
+  },[movies])
   
   return (
     <>
