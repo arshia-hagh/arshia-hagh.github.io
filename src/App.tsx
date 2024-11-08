@@ -2,6 +2,7 @@ import Layout from './Components/layout/Layout'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import Home from './Pages/Home/Home'
 import Movie from './Pages/Movie/Movie'
+import Search from './Pages/Search/Search'
 
 function App() {
   
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/Movie/:id' element={<Movie/>}/>
+        <Route path='/search' element={<Search/>}/>
         <Route path='*' element={<Navigate to='/' />}/>
       </Routes>
     </Layout>
