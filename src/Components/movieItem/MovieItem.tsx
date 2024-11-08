@@ -20,7 +20,7 @@ function MovieItem({
       <div className="flex px-1 py-1 relative overflow-hidden   items-center justify-between">
         <h1 className=" w-[70%]  font-semibold">{title}</h1>
         <span
-          className={`bg-secondery--color  rounded-sm transition-all font-bold block max-w-[20%] px-2 min-w-fit h-[20%] text-center ${color_voteavrage(
+          className={`bg-secondery--color  rounded-sm transition-all font-bold block max-w-[20%] px-2 min-w-fit h-[20%] text-center ${color_voteaverage(
             vote_average
           )}`}
         >
@@ -29,7 +29,7 @@ function MovieItem({
 
       </div>
       <div
-          className="bg-[#fff] transition-all translate-y-[10%] h-[50%]  group-hover:translate-y-[-80%]  lg:block sm:hidden md:hidden overflow-y-auto     w-full invisible group-hover:visible group-hover:top z-10  
+          className="bg-[#fff] transition-all duration-[0.4s] translate-y-[10%] h-[50%]  group-hover:translate-y-[-100%]  lg:block sm:hidden md:hidden overflow-y-auto     w-full invisible group-hover:visible group-hover:top z-10  
        rounded-sm p-4 absolute text-[#000]"
         >
           <h1 className="text-2xl font-bold">Overview</h1>
@@ -42,7 +42,7 @@ function MovieItem({
     </div>
   );
 }
-function color_voteavrage(vote: number) {
+function color_voteaverage(vote: number) {
   if (vote >= 8 && vote <= 10) {
     return "text-[#38d92a]";
   } else if (vote >= 5 && vote <= 8) {
