@@ -1,10 +1,10 @@
-import React from 'react'
-interface TChildren {
+import React, { ComponentProps } from 'react'
+type TChildren = ComponentProps<'div'> &  {
     children: React.ReactNode
 }
-function Container({children} : TChildren) {
+function Container({children,className,...rest} : TChildren) {
   return (
-    <div className='lg:w-[70%] m-auto md:w-[80%] sm:w-screen'>
+    <div {...rest} className={`lg:w-[70%] m-auto md:w-[80%] ${className} sm:w-screen`}>
         {children}
     </div>
   )
