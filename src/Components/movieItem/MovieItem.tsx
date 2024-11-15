@@ -29,7 +29,7 @@ function MovieItem({
 
       </div>
       <div
-          className="bg-[#fff] transition-all duration-[0.4s] translate-y-[10%] h-[50%]  group-hover:translate-y-[-100%]  lg:block sm:hidden md:hidden overflow-y-auto     w-full invisible group-hover:visible group-hover:top z-10  
+          className="bg-[#fff] transition-all duration-[0.4s] translate-y-[10%] h-[50%]  group-hover:translate-y-[-100%]  lg:block sm:hidden md:hidden overflow-y-auto     w-full invisible group-hover:visible  z-10  
        rounded-sm p-4 absolute text-[#000]"
         >
           <h1 className="text-2xl font-bold">Overview</h1>
