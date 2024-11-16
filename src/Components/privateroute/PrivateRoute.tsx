@@ -1,13 +1,13 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../Redux/store'
-import { login } from '../../Redux/LoginSlice'
 import { Navigate, Outlet } from 'react-router-dom'
+import { useLoginContext } from '../../Context/LoginContext'
 function PrivateRoute() {
-    const {Login} = useSelector((state : RootState)=> state)
+    const {login} = useLoginContext()
   return (
     <>
-    {Login ? <Outlet/> : <Navigate to='/Auth'/>}
+    {login ? <Outlet/> : <Navigate to='/Auth'/>}
     </>
   )
 }
