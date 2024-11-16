@@ -1,19 +1,20 @@
-import React, { useId } from 'react'
+import  { useId } from 'react'
 import Container from '../../Components/container/Container'
 import { useForm } from 'react-hook-form'
 import { registerSchema } from '../../Validations/Register'
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useLoginContext } from '../../Context/LoginContext';
 
 function LogIn() {
     const {handleSubmit,register,formState: {errors}} = useForm({defaultValues: {name : "",password: ""},resolver:yupResolver(registerSchema)})
-
+    const {handleLogin}  = useLoginContext()
     const id = useId()
   return (
     <>
         <Container className='h-[70vh] flex items-center justify-center'>
           
-            <form onSubmit={handleSubmit((data) => console.log(data))}  className='bg-primery--color  overflow-hidden relative items-center flex justify-center flex-col gap-5 p-5 rounded-sm w-[40%] h-[70%]'>
-                <div className='flex gap-2 w-[80%] flex-col'>
+            <form onSubmit={handleSubmit((data) =>  handleLogin(data.name,data.password))}  className='bg-primery--color  overflow-hidden relative items-center flex justify-center flex-col gap-5 p-5 rounded-sm w-[40%] h-[70%]'>
+                <div className='flex gap-2  w-[80%] flex-col'>
                     <label className='text-white  font-semibold'  htmlFor={id + '1020'}>Username:</label>
                     <input id={id + '1020'} {...register('name')} 
                     className=' placeholder:text-gray-700 p-2 font-semibold  bg-black outline-none  focus:placeholder:text-gray-500 rounded-2xl'  placeholder='username' type="text"  />
