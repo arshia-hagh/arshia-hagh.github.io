@@ -8,9 +8,10 @@ import { RootState } from './Redux/store'
 import LogIn from './Pages/LogIn/LogIn'
 import PrivateRoute from './Components/privateroute/PrivateRoute'
 import Cart from './Pages/Cart/Cart'
+import { useLoginContext } from './Context/LoginContext'
 
 function App() {
-  const {login} = useSelector((state:RootState) => state.Login)
+  const {login} = useLoginContext()
   return (
     <Layout>
       <Routes>
