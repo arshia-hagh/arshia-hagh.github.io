@@ -1,30 +1,25 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
 
 interface LoginSlice {
     login : boolean,
-    token: string
+    
 }
 const initialState : LoginSlice = {
     login: false,
-    token: ''
+    
 }
 export const  LoginSlice = createSlice({
     name: 'Login',
     initialState,
     reducers:{
-        login: (state) => {
-            state.login = true
+        Log: (state,action) => {
+            state.login = action.payload
+            
 
         },
-        logout: (state) => {
-            state.login = false
-            // state.token = ''
-            // localStorage.setItem('Token',state.token)
-            // nav('/Auth')
-        }
     }
 
 })
-export const {login,logout} = LoginSlice.actions
+export const {Log} = LoginSlice.actions
 export default LoginSlice.reducer
