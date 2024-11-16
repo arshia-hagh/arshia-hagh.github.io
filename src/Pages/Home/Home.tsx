@@ -5,22 +5,37 @@ import { getMovie } from "../../services/axios/requsets/Movie";
 import { reqApi } from "../../services/axios/configs/Configs";
 import { getMovies } from "../../server/types";
 import { Link } from "react-router-dom";
+import Paginate from "../../Components/paginate/Paginate";
 
 function Home() {
   const [movies, setMovies] = useState<getMovies>();
+  const [page,setPage] = useState<number>(1)
+  const [limit,setLimit] = useState<number>(5)
+  const totalPage = 500
+  // console.log(movies?.page)
   const abortController = new AbortController()
   useEffect(() => {
     reqApi({
       signal: abortController.signal
     })
-    getMovie().then(res => {
+    getMovie(page).then(res => {
       setMovies(res)
     }).catch(err => console.log('Error', err.message))
-    return () => {
-      abortController.abort()
-    }
+    // return () => {
+    //   abortController.abort()
+    // }
   },[movies])
-  
+  const handleClick = (value : any) => {
+    if(value === '&lsaquo;'){
+      setPage((page) => page  !== 1 ? page - 1 : page)
+    }
+    else if(value === '&rsaquo;'){
+      setPage((page) => page  + 1)
+    }
+    else{
+      setPage(value)
+    }
+  }
   return (
     <>
       <br />
@@ -35,6 +50,7 @@ function Home() {
             
           ))}
         </div>
+        <Paginate page={page} totalPage={totalPage} siblings={page} handleclick={handleClick} />
       </Container>
     </>
   );
