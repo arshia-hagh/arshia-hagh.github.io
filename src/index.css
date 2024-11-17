@@ -1,9 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: 'Gandom';
+  src: url('./Fonts/Gandom.woff');
+}
+@font-face {
+  font-family: 'Yekan';
+  src: url('./Fonts/Yekan.woff');
+  font-weight: 700;
+}
 body{
   background-color: #000;
   color: #fff;
+  direction: rtl;
+  font-family: 'Yekan';
+
 }
 *{
   margin: 0px;
