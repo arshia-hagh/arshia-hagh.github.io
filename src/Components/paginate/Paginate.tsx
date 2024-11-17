@@ -12,7 +12,6 @@ interface TPaginate{
 function Paginate({page,totalPage,siblings,handleclick}: TPaginate) {
     
     const array = returnPaginationRagne(page,totalPage,siblings)
-    console.log(array)
   return (
     <div className='flex  justify-center'>
         <ul className='flex flex-wrap gap-4 text-lg font-bold'>
