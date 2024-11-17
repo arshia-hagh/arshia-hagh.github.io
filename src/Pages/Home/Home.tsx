@@ -10,9 +10,7 @@ import Paginate from "../../Components/paginate/Paginate";
 function Home() {
   const [movies, setMovies] = useState<getMovies>();
   const [page,setPage] = useState<number>(1)
-  const [limit,setLimit] = useState<number>(5)
-  const totalPage = 500
-  // console.log(movies?.page)
+  const [totalPage] = useState<number>(500)
   const abortController = new AbortController()
   useEffect(() => {
     reqApi({
@@ -40,8 +38,10 @@ function Home() {
     <>
       <br />
       <Container>
-      <h1 className="font-bold">List Movies</h1>
+      <h1 className="font-bold">LIST MOVIE</h1>
       <br />
+      <br />
+
         <div className="grid   grid-cols-3">
           {movies?.results.map(items => (
            <Link  key={items.id} to={`/Movie/${items.id}`}>
