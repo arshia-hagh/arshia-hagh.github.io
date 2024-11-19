@@ -6,6 +6,7 @@ import { reqApi } from "../../services/axios/configs/Configs";
 import { getMovies } from "../../server/types";
 import { Link } from "react-router-dom";
 import Paginate from "../../Components/paginate/Paginate";
+import i18n from "../../i18n";
 
 function Home() {
   const [movies, setMovies] = useState<getMovies>();
@@ -16,7 +17,7 @@ function Home() {
     reqApi({
       signal: abortController.signal
     })
-    getMovie(page).then(res => {
+    getMovie(page,i18n.language).then(res => {
       setMovies(res)
     }).catch(err => console.log('Error', err.message))
     // return () => {
