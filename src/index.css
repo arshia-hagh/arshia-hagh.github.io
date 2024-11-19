@@ -17,6 +17,10 @@ body{
   font-family: 'Yekan';
 
 }
+.ltr{
+  direction: ltr;
+}
+
 *{
   margin: 0px;
   padding: 0;
