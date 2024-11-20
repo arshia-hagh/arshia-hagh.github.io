@@ -4,6 +4,8 @@ const en = {
   Login: "Login",
   Logout: "Logout",
   username: "Username",
-  password: "Password"
+  password: "Password",
+  placeholderu: 'username...',
+  placeholderp: 'password...'
 };
 export default en;
