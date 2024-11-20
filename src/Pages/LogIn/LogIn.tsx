@@ -17,16 +17,16 @@ function LogIn() {
     <>
         <Container className='h-[70vh] flex items-center justify-center'>
           
-            <form onSubmit={handleSubmit((data) =>  handleLogin(data.name,data.password))}  className={`bg-primery--color  overflow-hidden relative items-center  ${i18n.language === 'en' ? 'ltr' : ''} flex justify-center flex-col gap-5 p-5 rounded-sm w-[40%] h-[70%]`}>
+            <form onSubmit={handleSubmit((data) =>  handleLogin(data.name,data.password))}  className={`bg-primery--color transition-all translate-x-0  overflow-hidden relative items-center  ${i18n.language === 'en' ? 'ltr' : ''} flex justify-center flex-col gap-5 p-5 rounded-sm lg:w-[45%] md:w-[60%] sm:w-[80%] lg:h-[70%] md:h-[70%] sm:h-[70%]`}>
                 <div className='flex gap-2  w-[80%] flex-col'>
                     <label className='text-white  font-semibold'  htmlFor={id + '1020'}>{t('username')}:</label>
                     <input id={id + '1020'} {...register('name')} 
-                    className=' placeholder:text-gray-700 p-2 font-semibold  bg-black outline-none  focus:placeholder:text-gray-500 rounded-2xl'  placeholder='username' type="text"  />
+                    className=' placeholder:text-gray-700 p-2 font-semibold  bg-black outline-none  focus:placeholder:text-gray-500 rounded-2xl'  placeholder={t('placeholderu')} type="text"  />
                     {errors.name?.message && <span className='text-red-700 text-sm'>{errors.name.message}</span>}
                 </div> 
                 <div className='flex gap-2 w-[80%] relative flex-col'>
                 <label  className='text-white font-semibold' htmlFor={id + '2020'}>{t('password')}:</label>
-                <input  {...register('password')}  className='placeholder:text-gray-700 p-2 font-semibold focus:placeholder:text-gray-500  group-focus:translate-y-[-10%]  bg-black  outline-none rounded-2xl' placeholder='password' type={showPassword ? 'text' : 'password'}  id={id + '2020'}  />
+                <input  {...register('password')}  className='placeholder:text-gray-700 p-2 font-semibold focus:placeholder:text-gray-500  group-focus:translate-y-[-10%]  bg-black  outline-none rounded-2xl' placeholder={t('placeholderp')} type={showPassword ? 'text' : 'password'}  id={id + '2020'}  />
                 {showPassword ? <IoMdEye className={`cursor-pointer absolute top-[60%] ${i18n.language === 'en' ? 'right-[5%]' : 'left-[5%]'}`} fontSize={20} onClick={() => setShowPassword(false)}/> : <IoMdEyeOff className={`cursor-pointer absolute top-[60%] ${i18n.language === 'en' ? 'right-[5%]' : 'left-[5%]'}`} fontSize={20} onClick={() => setShowPassword(true)}/>}
                 {errors.password?.message && <span  className='text-red-700 text-sm'>{errors.password.message}</span>}
                 </div>

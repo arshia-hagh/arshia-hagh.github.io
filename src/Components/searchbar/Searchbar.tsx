@@ -23,7 +23,7 @@ function Searchbar() {
         <Form action="" className="flex flex-col items-center">
           <Field
             placeholder={t('Search')}
-            className="outline-none  px-2 py-1 border-2 rounded-xl border-[#c86305] bg-transparent text-white"
+            className="outline-none  lg:px-2 lg:py-1 md:py-1 md:px-2 sm:p-[2px] border-2 rounded-xl border-[#c86305] bg-transparent text-white"
             name="search"
             type="text"
           />
