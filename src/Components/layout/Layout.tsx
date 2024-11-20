@@ -5,10 +5,10 @@ interface TChildren{
 }
 function Layout({children} : TChildren) {
   return (
-    <div>
+    <>
         <NavBar/>
         {children}
-    </div>
+    </>
   )
 }
 
