@@ -6,13 +6,18 @@ import { store } from "./Redux/store.ts";
 import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import { LoginProvider } from "./Context/LoginContext.tsx";
+import { QueryClient, QueryClientProvider } from "react-query";
+const client = new QueryClient()
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
     <LoginProvider>
       <Provider store={store}>
-        <App />
-      </Provider>
+        <QueryClientProvider client={client}>
+
+`        <App />
+        </QueryClientProvider>
+`      </Provider>
     </LoginProvider>
     </BrowserRouter>
   </StrictMode>
