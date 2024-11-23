@@ -1,9 +1,5 @@
-import React from 'react'
-
 function Movie() {
-  return (
-    <div>Movie</div>
-  )
+  return <div>Movie</div>;
 }
 
-export default Movie
+export default Movie;
