@@ -7,23 +7,23 @@ import { getMovies } from "../../server/types";
 import { Link } from "react-router-dom";
 import Paginate from "../../Components/paginate/Paginate";
 import i18n from "../../i18n";
+import { useQuery } from "react-query";
 
 function Home() {
-  const [movies, setMovies] = useState<getMovies>();
   const [page,setPage] = useState<number>(1)
   const [totalPage] = useState<number>(500)
+  const {data,isLoading,isError} = useQuery(['Movies'], () => {
+    return getMovie(page,i18n.language,'popluarity.desc')
+  })
   const abortController = new AbortController()
   useEffect(() => {
     reqApi({
       signal: abortController.signal
     })
-    getMovie(page,i18n.language).then(res => {
-      setMovies(res)
-    }).catch(err => console.log('Error', err.message))
     // return () => {
     //   abortController.abort()
     // }
-  },[movies])
+  },[])
   const handleClick = (value : any) => {
     if(value === '&lsaquo;'){
       setPage((page) => page  !== 1 ? page - 1 : page)
@@ -44,7 +44,7 @@ function Home() {
       <br />
 
         <div className="grid   grid-cols-3">
-          {movies?.results.map(items => (
+          {data?.results.map(items => (
            <Link  key={items.id} to={`/Movie/${items.id}`}>
             <MovieItem  {...items}/>
            </Link>
@@ -58,3 +58,4 @@ function Home() {
 }
 
 export default Home;
+//https://api.themoviedb.org/3/discover/movie?sort_by=release_date.desc&api_key=a0814a81d9e0ea8e164320078c18b3cb&page=500%27
